@@ -24,7 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "webmock"
-  spec.add_development_dependency "faker"
+  spec.add_development_dependency "faker", "~> 1.5.0"
+  spec.add_development_dependency "i18n", "~> 0.6.0"
   spec.add_development_dependency "vcr", "~> 2.9"
   spec.add_development_dependency "json"
 end
