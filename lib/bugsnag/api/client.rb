@@ -203,6 +203,9 @@ module Bugsnag
         conn_opts = configuration.connection_options
         conn_opts[:builder] = configuration.middleware if configuration.middleware
         conn_opts[:proxy] = configuration.proxy if configuration.proxy
+
+        # Workaround - https://github.com/lostisland/faraday/issues/1118
+        Faraday::Utils.default_params_encoder = Faraday::NestedParamsEncoder
         opts[:faraday] = Faraday.new(conn_opts)
 
         opts
