@@ -53,6 +53,12 @@ module Bugsnag
         def events(project_id, options = {})
           get "projects/#{project_id}/events", options
         end
+
+        def events_total_count(project_id, options = {})
+          events(project_id, options)
+
+          @last_response.headers['x-total-count']
+        end
       end
     end
   end
